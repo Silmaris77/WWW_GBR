@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kontakt | GBR</title>
+    <meta
+      name="description"
+      content="Porozmawiajmy o Twoich wynikach. Napisz do nas i umów spotkanie konsultacyjne."
+    />
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+    <link rel="shortcut icon" href="assets/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      .contact-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+      }
+
+      .contact-form {
+        display: grid;
+        gap: 12px;
+      }
+
+      .calendar-mini {
+        margin-top: 14px;
+        padding-top: 14px;
+        border-top: 1px solid #dce6f8;
+      }
+
+      .calendar-mini p {
+        margin: 0 0 10px;
+        color: #2e4472;
+      }
+
+      .contact-form label {
+        font-weight: 600;
+        color: #223e72;
+      }
+
+      .contact-form input,
+      .contact-form textarea,
+      .contact-form select {
+        width: 100%;
+        border: 1px solid #cfdcf5;
+        border-radius: 10px;
+        padding: 11px 12px;
+        font: inherit;
+      }
+
+      .contact-visual {
+        border: 1px solid #d6e2f8;
+        border-radius: 14px;
+        overflow: hidden;
+        background: #fff;
+      }
+
+      .contact-visual img {
+        width: 100%;
+        height: 100%;
+        min-height: 420px;
+        object-fit: cover;
+        display: block;
+      }
+
+      @media (max-width: 900px) {
+        .contact-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="container nav-wrap">
+        <a class="brand" href="index.html" aria-label="GBR strona główna">
+          <img class="brand-logo" src="assets/logo-gbr-official-transparent.png" alt="GBR" />
+        </a>
+        <button class="nav-toggle" aria-label="Otwórz menu">☰</button>
+        <nav class="nav-links" aria-label="Nawigacja główna">
+          <a href="oferta.html">OFERTA (Jak pomagamy)</a>
+          <a href="diagnoza-efektywnosci-sprzedazy.html">DIAGNOZA EFEKTYWNOŚCI SPRZEDAŻY</a>
+          <a href="oferta.html#optymalizacja">OPTYMALIZACJA PROCESÓW</a>
+          <a href="o-nas.html">O NAS</a>
+          <a href="kontakt.html" aria-current="page">KONTAKT</a>
+          <a class="btn btn-primary" href="kontakt.html">UMÓW ROZMOWĘ</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="page-hero">
+        <div class="container hero-inner">
+          <div class="hero-text">
+            <p class="hero-eyebrow">KONTAKT</p>
+            <h1>Porozmawiajmy o Twoich wynikach</h1>
+            <p>
+              Masz wyzwanie w obszarze sprzedaży, zarządzania lub efektywności? Napisz do nas:
+              pdeptula@gbr.pl
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container contact-grid">
+          <article class="simple-card">
+            <h3>Umów spotkanie</h3>
+            <form class="contact-form" action="https://formsubmit.co/pdeptula@gbr.pl" method="post">
+              <input type="hidden" name="_subject" value="Nowe zapytanie z formularza GBR" />
+              <input type="hidden" name="_template" value="table" />
+              <input type="hidden" name="_captcha" value="false" />
+              <input type="hidden" name="_next" value="dziekujemy.html" />
+              <input type="text" name="_honey" style="display: none" tabindex="-1" autocomplete="off" />
+              <div>
+                <label for="name">Imię i nazwisko</label>
+                <input id="name" name="name" type="text" required />
+              </div>
+              <div>
+                <label for="email">Adres e-mail</label>
+                <input id="email" name="email" type="email" required />
+              </div>
+              <div>
+                <label for="topic">Temat rozmowy</label>
+                <select id="topic" name="topic">
+                  <option>Efektywność sprzedaży</option>
+                  <option>Rozwój liderów</option>
+                  <option>Optymalizacja procesów</option>
+                  <option>Wsparcie decyzji biznesowych</option>
+                </select>
+              </div>
+              <div>
+                <label for="message">Wiadomość</label>
+                <textarea id="message" name="message" rows="5"></textarea>
+              </div>
+              <button class="btn btn-primary" type="submit">Wyślij zapytanie</button>
+
+              <div class="calendar-mini">
+                <p>Wolisz od razu wybrać termin? Otwórz kalendarz spotkań.</p>
+                <a
+                  class="btn btn-light"
+                  href="https://calendly.com/pdeptula/30min"
+                  data-calendar-url="https://calendly.com/pdeptula/30min"
+                  >Otwórz kalendarz</a
+                >
+              </div>
+            </form>
+          </article>
+
+          <article class="contact-visual" aria-label="Wizualizacja spotkania konsultacyjnego">
+            <img
+              src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1400&q=80"
+              alt="Zespół podczas spotkania biznesowego"
+              loading="lazy"
+            />
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container">GBR © 2026. Skontaktuj się: pdeptula@gbr.pl</div>
+    </footer>
+
+    <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
+    <script src="script.js"></script>
+  </body>
+</html>
