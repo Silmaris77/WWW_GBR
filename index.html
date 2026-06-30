@@ -8,8 +8,8 @@
       name="description"
       content="Wspieramy organizacje w zwiększaniu efektywności sprzedaży, rozwoju liderów i transformacji biznesowej."
     />
-    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
-    <link rel="shortcut icon" href="assets/favicon.svg" />
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg?v=3" />
+    <link rel="shortcut icon" href="assets/favicon.svg?v=3" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -26,7 +26,15 @@
         </a>
         <button class="nav-toggle" aria-label="Otwórz menu">☰</button>
         <nav class="nav-links" aria-label="Nawigacja główna">
-          <a href="oferta.html">OFERTA (Jak pomagamy)</a>
+          <div class="nav-item has-submenu">
+            <a href="oferta.html">OFERTA (Jak pomagamy)</a>
+            <div class="submenu" aria-label="Podmenu oferty">
+              <a href="oferta.html#efektywnosc-sprzedazy">Efektywność sprzedaży</a>
+              <a href="oferta.html#rozwoj-liderow">Rozwój liderów</a>
+              <a href="oferta.html#optymalizacja">Optymalizacja procesów</a>
+              <a href="oferta.html#wsparcie-decyzji">Wsparcie decyzji biznesowych</a>
+            </div>
+          </div>
           <a href="diagnoza-efektywnosci-sprzedazy.html">DIAGNOZA EFEKTYWNOŚCI SPRZEDAŻY</a>
           <a href="oferta.html#optymalizacja">OPTYMALIZACJA PROCESÓW</a>
           <a href="o-nas.html">O NAS</a>
@@ -42,6 +50,7 @@
           <div class="hero-bg hero-bg-a is-visible"></div>
           <div class="hero-bg hero-bg-b"></div>
           <div class="hero-overlay"></div>
+          <div class="hero-sheen"></div>
         </div>
         <div class="container hero-inner">
           <div class="hero-text">
@@ -74,6 +83,15 @@
                 <span>konsultantów-praktyków</span>
               </div>
             </div>
+            <div class="hero-benchmark reveal">
+              <div class="benchmark-head">
+                <span>Średni efekt projektów sprzedażowych</span>
+                <strong>+19%</strong>
+              </div>
+              <div class="benchmark-track" aria-hidden="true">
+                <span class="benchmark-fill"></span>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -97,17 +115,35 @@
           <h2 class="section-title">3 filary współpracy</h2>
           <div class="pillar-grid">
             <article class="pillar-card reveal">
-              <div class="icon-badge">1</div>
+              <div class="icon-badge" aria-hidden="true">
+                <svg viewBox="0 0 24 24" focusable="false">
+                  <path
+                    d="M4 17.5h3.2V10H4v7.5zm6.4 0h3.2V6h-3.2v11.5zm6.4 0H20V12h-3.2v5.5zM3 20h18"
+                  />
+                </svg>
+              </div>
               <h3>Efektywność sprzedaży</h3>
               <p>Zwiększamy skuteczność działań handlowych i poprawiamy wyniki sprzedażowe.</p>
             </article>
             <article class="pillar-card reveal">
-              <div class="icon-badge">2</div>
+              <div class="icon-badge" aria-hidden="true">
+                <svg viewBox="0 0 24 24" focusable="false">
+                  <path
+                    d="M12 11a3.5 3.5 0 1 0-3.5-3.5A3.5 3.5 0 0 0 12 11zm-6 8v-.6A4.4 4.4 0 0 1 10.4 14h3.2A4.4 4.4 0 0 1 18 18.4V19M18.5 9.2l1.1 1.1 2.2-2.2"
+                  />
+                </svg>
+              </div>
               <h3>Rozwój liderów</h3>
               <p>Budujemy menedżerów, którzy potrafią zarządzać wynikiem i zespołem.</p>
             </article>
             <article class="pillar-card reveal">
-              <div class="icon-badge">3</div>
+              <div class="icon-badge" aria-hidden="true">
+                <svg viewBox="0 0 24 24" focusable="false">
+                  <path
+                    d="M4 12a8 8 0 1 1 8 8m0-16v4m0 8v4m8-8h-4M8 12H4m13.7-5.7-2.8 2.8M9.1 14.9l-2.8 2.8m0-11.4 2.8 2.8m5.8 5.8 2.8 2.8"
+                  />
+                </svg>
+              </div>
               <h3>Transformacja biznesowa</h3>
               <p>Optymalizujemy procesy i wspieramy podejmowanie kluczowych decyzji.</p>
             </article>
@@ -135,6 +171,35 @@
         </div>
       </section>
 
+      <section class="section process-section">
+        <div class="container">
+          <p class="hero-eyebrow" style="color: #335b9e">JAK PRACUJEMY</p>
+          <h2 class="section-title">Przejrzysty proces współpracy w 4 krokach</h2>
+          <div class="process-track reveal">
+            <article class="process-step">
+              <span>01</span>
+              <h3>Diagnoza</h3>
+              <p>Poznanie kontekstu biznesowego i kluczowych barier wzrostu.</p>
+            </article>
+            <article class="process-step">
+              <span>02</span>
+              <h3>Projekt</h3>
+              <p>Przekładamy cele na konkretne rozwiązania i standardy działania.</p>
+            </article>
+            <article class="process-step">
+              <span>03</span>
+              <h3>Wdrożenie</h3>
+              <p>Wspieramy zespoły i liderów w egzekucji nowych praktyk.</p>
+            </article>
+            <article class="process-step">
+              <span>04</span>
+              <h3>Skalowanie</h3>
+              <p>Utrwalamy efekty i rozwijamy model w kolejnych obszarach firmy.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
       <section class="section case-section">
         <div class="container">
           <div class="case-head">
@@ -150,6 +215,7 @@
               <div class="case-body">
                 <p class="case-tag">FMCG</p>
                 <h3>Transformacja sprzedaży</h3>
+                <p class="case-kpi">+28%</p>
                 <p>Wdrożenie standardów sprzedaży i pracy menedżerskiej.</p>
                 <ul class="case-metrics">
                   <li>Problem: niski poziom egzekucji standardów</li>
@@ -166,6 +232,7 @@
               <div class="case-body">
                 <p class="case-tag">Bankowość</p>
                 <h3>Optymalizacja procesów</h3>
+                <p class="case-kpi">-15%</p>
                 <p>Redesign kluczowych procesów operacyjnych i wdrożenie usprawnień.</p>
                 <ul class="case-metrics">
                   <li>Problem: wysokie koszty i opóźnienia operacyjne</li>
@@ -182,6 +249,7 @@
               <div class="case-body">
                 <p class="case-tag">Consulting</p>
                 <h3>System KPI i zarządzanie wynikami</h3>
+                <p class="case-kpi">+32%</p>
                 <p>Wdrożenie spójnego systemu KPI i dashboardów zarządczych.</p>
                 <ul class="case-metrics">
                   <li>Problem: rozproszone cele i brak wspólnego dashboardu</li>
@@ -200,20 +268,24 @@
           <h2 class="section-title">Doświadczenie, które przekłada się na wyniki</h2>
           <div class="stats-grid reveal">
             <article class="stat">
-              <strong>30+</strong>
+              <strong><span class="counter" data-count-to="30">0</span>+</strong>
               <p>lat doświadczenia</p>
             </article>
             <article class="stat">
-              <strong>300+</strong>
+              <strong><span class="counter" data-count-to="300">0</span>+</strong>
               <p>projektów dla liderów rynku</p>
             </article>
             <article class="stat">
-              <strong>100+</strong>
+              <strong><span class="counter" data-count-to="100">0</span>+</strong>
               <p>konsultantów z doświadczeniem biznesowym</p>
             </article>
             <article class="stat">
-              <strong>100%</strong>
+              <strong><span class="counter" data-count-to="100">0</span>%</strong>
               <p>podejście oparte na efektach, nie teorii</p>
+            </article>
+            <article class="stat">
+              <strong><span class="counter" data-count-to="25000">0</span>+</strong>
+              <p>dni szkoleniowych zrealizowanych w projektach</p>
             </article>
           </div>
         </div>
@@ -261,15 +333,34 @@
           </div>
           <div class="footer-contact">
             <h4>Kontakt</h4>
-            <p>pdeptula@gbr.pl</p>
+            <p><a href="kontakt.html">Formularz kontaktowy</a></p>
           </div>
         </div>
         <div class="footer-bottom">
           <span>GBR © 2026. Wszystkie prawa zastrzeżone.</span>
-          <span>Grow to Excellence</span>
+          <div class="footer-bottom-right">
+            <span>Grow to Excellence</span>
+            <div class="footer-social" aria-label="Kontakt GBR">
+              <a href="mailto:pdeptula@gbr.pl" aria-label="Napisz e-mail do GBR">
+                <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                  <path d="M4 6h16v12H4z" />
+                  <path d="m4 7 8 6 8-6" />
+                </svg>
+              </a>
+              <a href="https://www.linkedin.com/company/gb-resources-polska/" target="_blank" rel="noopener noreferrer" aria-label="Profil GBR na LinkedIn">
+                <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                  <path d="M16 8a5 5 0 0 1 5 5v6h-4v-6a1 1 0 0 0-2 0v6h-4v-11h4v2" />
+                  <path d="M7 8h-4v11h4z" />
+                  <path d="M5 5a2 2 0 1 0 0.001 0z" />
+                </svg>
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     </footer>
+
+    <a class="floating-cta" href="kontakt.html" aria-label="Umów konsultację">Umów konsultację</a>
 
     <script src="script.js"></script>
   </body>

@@ -8,8 +8,8 @@
       name="description"
       content="Obszary, w których zwiększamy wyniki: efektywność sprzedaży, rozwój liderów, optymalizacja procesów i wsparcie decyzji biznesowych."
     />
-    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
-    <link rel="shortcut icon" href="assets/favicon.svg" />
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg?v=3" />
+    <link rel="shortcut icon" href="assets/favicon.svg?v=3" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -18,7 +18,7 @@
     />
     <link rel="stylesheet" href="styles.css" />
   </head>
-  <body>
+  <body class="page-oferta">
     <header class="topbar">
       <div class="container nav-wrap">
         <a class="brand" href="index.html" aria-label="GBR strona główna">
@@ -26,7 +26,15 @@
         </a>
         <button class="nav-toggle" aria-label="Otwórz menu">☰</button>
         <nav class="nav-links" aria-label="Nawigacja główna">
-          <a href="oferta.html" aria-current="page">OFERTA (Jak pomagamy)</a>
+          <div class="nav-item has-submenu">
+            <a href="oferta.html" aria-current="page">OFERTA (Jak pomagamy)</a>
+            <div class="submenu" aria-label="Podmenu oferty">
+              <a href="oferta.html#efektywnosc-sprzedazy">Efektywność sprzedaży</a>
+              <a href="oferta.html#rozwoj-liderow">Rozwój liderów</a>
+              <a href="oferta.html#optymalizacja">Optymalizacja procesów</a>
+              <a href="oferta.html#wsparcie-decyzji">Wsparcie decyzji biznesowych</a>
+            </div>
+          </div>
           <a href="diagnoza-efektywnosci-sprzedazy.html">DIAGNOZA EFEKTYWNOŚCI SPRZEDAŻY</a>
           <a href="#optymalizacja">OPTYMALIZACJA PROCESÓW</a>
           <a href="o-nas.html">O NAS</a>
@@ -52,7 +60,7 @@
 
       <section class="section">
         <div class="container pillar-grid">
-          <article class="simple-card">
+          <article class="simple-card" id="efektywnosc-sprzedazy">
             <h3>1. Efektywność sprzedaży</h3>
             <p class="section-text" style="margin-bottom: 10px">
               Zwiększamy skuteczność sprzedaży i produktywność zespołów.
@@ -69,7 +77,7 @@
             </ul>
           </article>
 
-          <article class="simple-card">
+          <article class="simple-card" id="rozwoj-liderow">
             <h3>2. Rozwój liderów i kompetencji</h3>
             <p class="section-text" style="margin-bottom: 10px">
               Budujemy liderów, którzy dowożą wyniki.
@@ -99,7 +107,7 @@
             </ul>
           </article>
 
-          <article class="simple-card">
+          <article class="simple-card" id="wsparcie-decyzji">
             <h3>4. Wsparcie decyzji biznesowych</h3>
             <p class="section-text" style="margin-bottom: 10px">
               Pomagamy podejmować strategiczne decyzje.
@@ -183,12 +191,29 @@
           </div>
           <div class="footer-contact">
             <h4>Kontakt</h4>
-            <p>pdeptula@gbr.pl</p>
+            <p><a href="kontakt.html">Formularz kontaktowy</a></p>
           </div>
         </div>
         <div class="footer-bottom">
           <span>GBR © 2026. Wszystkie prawa zastrzeżone.</span>
-          <span>Grow to Excellence</span>
+          <div class="footer-bottom-right">
+            <span>Grow to Excellence</span>
+            <div class="footer-social" aria-label="Kontakt GBR">
+              <a href="mailto:pdeptula@gbr.pl" aria-label="Napisz e-mail do GBR">
+                <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                  <path d="M4 6h16v12H4z" />
+                  <path d="m4 7 8 6 8-6" />
+                </svg>
+              </a>
+              <a href="https://www.linkedin.com/company/gb-resources-polska/" target="_blank" rel="noopener noreferrer" aria-label="Profil GBR na LinkedIn">
+                <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                  <path d="M16 8a5 5 0 0 1 5 5v6h-4v-6a1 1 0 0 0-2 0v6h-4v-11h4v2" />
+                  <path d="M7 8h-4v11h4z" />
+                  <path d="M5 5a2 2 0 1 0 0.001 0z" />
+                </svg>
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     </footer>
