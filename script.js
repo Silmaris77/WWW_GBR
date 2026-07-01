@@ -18,19 +18,23 @@ const heroLayerB = document.querySelector(".hero-bg-b");
 
 if (rotatingHero && heroSection && heroLayerA && heroLayerB) {
   const heroTexts = [
-    "Zwiększamy efektywność działów sprzedaży i rozwijamy liderów, którzy osiągają wyniki.",
-    "Przekładamy strategię biznesową na mierzalne rezultaty organizacji.",
-    "Budujemy zespoły, które dowożą cele i rosną szybciej niż rynek."
+    "Zwiększamy efektywność działów sprzedaży i rozwijamy liderów,<br>którzy osiągają wyniki.",
+    "Przekładamy strategię biznesową<br>na mierzalne rezultaty organizacji<br>i sprzedaży.",
+    "Budujemy zespoły,<br>które dowożą cele i rosną szybciej niż rynek."
   ];
 
   const heroImages = [
-    "https://images.unsplash.com/photo-1552581234-26160f608093?auto=format&fit=crop&w=1800&q=80",
-    "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1800&q=80",
-    "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1800&q=80"
+    "https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1800&h=1100&q=80",
+    "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1800&h=1100&q=80",
+    "https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?auto=format&fit=crop&w=1800&h=1100&q=80"
   ];
 
-  heroLayerA.style.backgroundImage = `url("${heroImages[0]}")`;
-  heroLayerB.style.backgroundImage = `url("${heroImages[1]}")`;
+  rotatingHero.innerHTML = heroTexts[0];
+
+  heroLayerA.src = heroImages[0];
+  heroLayerB.src = heroImages[1];
+  heroLayerA.alt = "";
+  heroLayerB.alt = "";
 
   let idx = 0;
   let activeLayer = heroLayerA;
@@ -39,13 +43,13 @@ if (rotatingHero && heroSection && heroLayerA && heroLayerB) {
   setInterval(() => {
     idx = (idx + 1) % heroTexts.length;
 
-    inactiveLayer.style.backgroundImage = `url("${heroImages[idx]}")`;
+    inactiveLayer.src = heroImages[idx];
     inactiveLayer.classList.add("is-visible");
     activeLayer.classList.remove("is-visible");
 
     rotatingHero.classList.add("is-fading");
     setTimeout(() => {
-      rotatingHero.textContent = heroTexts[idx];
+      rotatingHero.innerHTML = heroTexts[idx];
       rotatingHero.classList.remove("is-fading");
     }, 230);
 
