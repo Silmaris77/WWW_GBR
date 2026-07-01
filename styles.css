@@ -715,42 +715,55 @@ img {
 .co-robimy-layout {
   display: grid;
   grid-template-columns: minmax(300px, 0.95fr) minmax(520px, 1.35fr);
-  gap: 42px;
+  gap: 44px;
   align-items: start;
 }
 
 .co-robimy-intro .section-title {
-  max-width: 470px;
-  margin-bottom: 14px;
+  max-width: 520px;
+  margin-bottom: 12px;
 }
 
 .co-robimy-intro .section-text {
   max-width: 470px;
-  margin-bottom: 18px;
+  margin-bottom: 16px;
+  font-size: 0.92rem;
+  line-height: 1.62;
 }
 
 .co-robimy-link {
   letter-spacing: 0.8px;
   font-size: 0.78rem;
+  min-height: 40px;
+  padding: 10px 22px;
+  border-width: 1.5px;
+  border-radius: 18px;
+  border-color: #b8ccef;
+  color: #315c9f;
+}
+
+.co-robimy-link:hover {
+  transform: none;
+  box-shadow: none;
 }
 
 .co-robimy-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(220px, 1fr));
-  gap: 24px 28px;
+  gap: 30px 36px;
 }
 
 .co-robimy-item {
   display: grid;
   grid-template-columns: 40px 1fr;
-  gap: 12px;
+  gap: 14px;
   align-items: start;
 }
 
 .co-robimy-icon {
   width: 40px;
   height: 40px;
-  color: #3f74d3;
+  color: #4a7ee0;
   display: grid;
   place-items: center;
 }
@@ -760,23 +773,25 @@ img {
   height: 28px;
   stroke: currentColor;
   fill: none;
-  stroke-width: 1.85;
+  stroke-width: 2.05;
   stroke-linecap: round;
   stroke-linejoin: round;
 }
 
 .co-robimy-item h3 {
-  margin: 0 0 5px;
+  margin: 0 0 6px;
   font-family: "Space Grotesk", "Segoe UI", sans-serif;
-  font-size: 1.05rem;
-  color: #173d84;
+  font-size: 0.99rem;
+  letter-spacing: -0.15px;
+  color: #1b3f84;
 }
 
 .co-robimy-item p {
   margin: 0;
-  color: #4f6190;
-  font-size: 0.88rem;
-  line-height: 1.5;
+  max-width: 340px;
+  color: #5a6c95;
+  font-size: 0.84rem;
+  line-height: 1.56;
 }
 
 .bullet-list {
@@ -1090,31 +1105,77 @@ body.page-kontakt {
 }
 
 .timeline {
+  position: relative;
   background: #fff;
-  border: 1px solid #dae4f6;
-  border-radius: 16px;
-  padding: 22px;
+  border: 1px solid #d7e3f5;
+  border-radius: 18px;
+  padding: 22px 20px;
   box-shadow: 0 14px 28px rgba(6, 31, 82, 0.07);
+  counter-reset: etap;
+}
+
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: 42px;
+  top: 34px;
+  bottom: 34px;
+  width: 2px;
+  background: linear-gradient(180deg, rgba(43, 108, 223, 0.35), rgba(43, 108, 223, 0.1));
 }
 
 .timeline-item {
+  position: relative;
   display: grid;
-  grid-template-columns: auto 1fr;
-  gap: 12px;
+  grid-template-columns: 1fr;
+  gap: 10px;
   align-items: start;
+  margin-left: 56px;
+  padding: 16px 18px;
+  border: 1px solid #dfe8f8;
+  border-radius: 14px;
+  background: linear-gradient(180deg, #ffffff 0%, #f8fbff 100%);
+  box-shadow: 0 10px 24px rgba(7, 35, 91, 0.05);
+}
+
+.timeline-item::before {
+  counter-increment: etap;
+  content: counter(etap);
+  position: absolute;
+  left: -46px;
+  top: 18px;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-family: "Space Grotesk", "Segoe UI", sans-serif;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #fff;
+  background: linear-gradient(140deg, #1f64d8, #4e90f4);
+  box-shadow: 0 0 0 6px rgba(31, 100, 216, 0.16);
 }
 
 .timeline-item + .timeline-item {
-  margin-top: 14px;
+  margin-top: 12px;
+}
+
+.timeline-item h4 {
+  margin: 0;
+  color: #142f63;
+  font-family: "Space Grotesk", "Segoe UI", sans-serif;
+  font-size: 1.02rem;
+}
+
+.timeline-item p {
+  margin: 0;
+  color: #445b87;
+  line-height: 1.55;
 }
 
 .dot {
-  width: 16px;
-  height: 16px;
-  border-radius: 50%;
-  margin-top: 6px;
-  background: var(--primary);
-  box-shadow: 0 0 0 6px rgba(10, 77, 191, 0.16);
+  display: none;
 }
 
 footer {
@@ -1397,6 +1458,7 @@ footer {
 
   .co-robimy-grid {
     grid-template-columns: repeat(2, minmax(220px, 1fr));
+    gap: 18px 22px;
   }
 
   .featured-case {
@@ -1587,9 +1649,13 @@ footer {
     gap: 14px;
   }
 
+  .co-robimy-link {
+    width: 100%;
+  }
+
   .co-robimy-item {
     grid-template-columns: 34px 1fr;
-    gap: 10px;
+    gap: 9px;
   }
 
   .co-robimy-icon {
@@ -1699,6 +1765,34 @@ footer {
   .deliverable li,
   .effect-item {
     font-size: 0.92rem;
+  }
+
+  .timeline {
+    padding: 14px 12px;
+  }
+
+  .timeline::before {
+    left: 26px;
+    top: 22px;
+    bottom: 22px;
+  }
+
+  .timeline-item {
+    margin-left: 36px;
+    padding: 12px 12px;
+  }
+
+  .timeline-item::before {
+    left: -30px;
+    top: 14px;
+    width: 22px;
+    height: 22px;
+    font-size: 0.74rem;
+    box-shadow: 0 0 0 4px rgba(31, 100, 216, 0.16);
+  }
+
+  .timeline-item h4 {
+    font-size: 0.98rem;
   }
 
   .bullet-list {
