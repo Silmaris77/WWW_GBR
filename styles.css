@@ -373,6 +373,10 @@ img {
   transition: opacity 0.45s ease, transform 0.45s ease;
 }
 
+.hero-line {
+  display: block;
+}
+
 .hero h1.is-fading {
   opacity: 0;
   transform: translateY(8px);

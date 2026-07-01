@@ -17,11 +17,27 @@ const heroLayerA = document.querySelector(".hero-bg-a");
 const heroLayerB = document.querySelector(".hero-bg-b");
 
 if (rotatingHero && heroSection && heroLayerA && heroLayerB) {
-  const heroTexts = [
+  const heroTextsDesktop = [
     "Zwiększamy efektywność działów sprzedaży i rozwijamy liderów,<br>którzy osiągają wyniki.",
     "Przekładamy strategię biznesową<br>na mierzalne rezultaty organizacji<br>i sprzedaży.",
     "Budujemy zespoły,<br>które dowożą cele i rosną szybciej niż rynek."
   ];
+
+  const heroTextsMobile = [
+    '<span class="hero-line">Podnosimy skuteczność</span><span class="hero-line">sprzedaży i rozwój</span><span class="hero-line">liderów zespołów.</span>',
+    '<span class="hero-line">Przekładamy strategię</span><span class="hero-line">na mierzalne wyniki</span><span class="hero-line">sprzedaży i firmy.</span>',
+    '<span class="hero-line">Budujemy zespoły,</span><span class="hero-line">które realizują cele</span><span class="hero-line">i rosną szybciej.</span>'
+  ];
+
+  const getActiveHeroTexts = () => {
+    if (window.matchMedia("(max-width: 760px)").matches) {
+      return heroTextsMobile;
+    }
+
+    return heroTextsDesktop;
+  };
+
+  let activeHeroTexts = getActiveHeroTexts();
 
   const updateHeroTitleMinHeight = () => {
     const probe = rotatingHero.cloneNode(false);
@@ -36,7 +52,7 @@ if (rotatingHero && heroSection && heroLayerA && heroLayerB) {
     heroSection.appendChild(probe);
 
     let maxHeight = 0;
-    heroTexts.forEach((text) => {
+    activeHeroTexts.forEach((text) => {
       probe.innerHTML = text;
       maxHeight = Math.max(maxHeight, probe.offsetHeight);
     });
@@ -51,7 +67,7 @@ if (rotatingHero && heroSection && heroLayerA && heroLayerB) {
     "https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?auto=format&fit=crop&w=1800&h=1100&q=80"
   ];
 
-  rotatingHero.innerHTML = heroTexts[0];
+  rotatingHero.innerHTML = activeHeroTexts[0];
   updateHeroTitleMinHeight();
 
   let heroResizeRaf = 0;
@@ -61,6 +77,13 @@ if (rotatingHero && heroSection && heroLayerA && heroLayerB) {
     }
 
     heroResizeRaf = requestAnimationFrame(() => {
+      const nextHeroTexts = getActiveHeroTexts();
+      if (nextHeroTexts !== activeHeroTexts) {
+        activeHeroTexts = nextHeroTexts;
+        idx %= activeHeroTexts.length;
+        rotatingHero.innerHTML = activeHeroTexts[idx];
+      }
+
       updateHeroTitleMinHeight();
     });
   });
@@ -75,7 +98,7 @@ if (rotatingHero && heroSection && heroLayerA && heroLayerB) {
   let inactiveLayer = heroLayerB;
 
   setInterval(() => {
-    idx = (idx + 1) % heroTexts.length;
+    idx = (idx + 1) % activeHeroTexts.length;
 
     inactiveLayer.src = heroImages[idx];
     inactiveLayer.classList.add("is-visible");
@@ -83,7 +106,7 @@ if (rotatingHero && heroSection && heroLayerA && heroLayerB) {
 
     rotatingHero.classList.add("is-fading");
     setTimeout(() => {
-      rotatingHero.innerHTML = heroTexts[idx];
+      rotatingHero.innerHTML = activeHeroTexts[idx];
       rotatingHero.classList.remove("is-fading");
     }, 230);
 
