@@ -586,6 +586,23 @@ img {
   border-bottom: 1px solid #edf1fa;
 }
 
+.logo-marquee {
+  overflow: hidden;
+  padding: 16px 0 28px;
+}
+
+.logo-track {
+  display: flex;
+  width: max-content;
+  gap: 18px;
+  animation: logoScrollRight 26s linear infinite;
+  will-change: transform;
+}
+
+.logo-track:hover {
+  animation-play-state: paused;
+}
+
 .logo-title {
   margin: 0;
   padding-top: 18px;
@@ -601,7 +618,6 @@ img {
   display: grid;
   grid-template-columns: repeat(6, minmax(90px, 1fr));
   gap: 18px;
-  padding: 16px 0 28px;
 }
 
 .logo-item {
@@ -1192,6 +1208,15 @@ footer {
   }
 }
 
+@keyframes logoScrollRight {
+  from {
+    transform: translateX(-50%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
 @keyframes gradientFlow {
   0% {
     background-position: 0% 50%;
@@ -1311,7 +1336,7 @@ footer {
   }
 
   .section {
-    padding: 66px 0;
+    padding: 36px 0;
   }
 
   .nav-toggle {
@@ -1364,11 +1389,58 @@ footer {
   }
 
   .nav-links.open {
-    max-height: 620px;
+    max-height: 560px;
   }
 
   .hero-inner {
-    min-height: 620px;
+    min-height: auto;
+    padding: 30px 0 36px;
+  }
+
+  .hero::before,
+  .hero::after,
+  .hero-sheen {
+    display: none;
+  }
+
+  .hero-overlay {
+    background:
+      radial-gradient(circle at 70% 10%, rgba(46, 130, 255, 0.28), transparent 30%),
+      linear-gradient(115deg, rgba(7, 23, 54, 0.96) 16%, rgba(8, 37, 88, 0.88) 56%, rgba(9, 54, 130, 0.72) 100%);
+  }
+
+  .hero h1 {
+    font-size: clamp(1.65rem, 7vw, 2.15rem);
+    margin: 6px 0 12px;
+  }
+
+  .hero p {
+    font-size: 0.92rem;
+  }
+
+  .hero-proof {
+    margin-top: 16px;
+    gap: 10px;
+  }
+
+  .proof-item strong {
+    font-size: 1.05rem;
+  }
+
+  .proof-item {
+    padding: 9px 11px;
+  }
+
+  .hero-benchmark {
+    display: none;
+  }
+
+  .benchmark-head {
+    font-size: 0.76rem;
+  }
+
+  .benchmark-head strong {
+    font-size: 0.98rem;
   }
 
   .page-hero::before {
@@ -1378,6 +1450,11 @@ footer {
   .hero-cta {
     flex-direction: column;
     align-items: stretch;
+    margin-top: 18px;
+  }
+
+  .hero-cta .btn {
+    width: 100%;
   }
 
   .hero-proof {
@@ -1388,6 +1465,20 @@ footer {
     grid-template-columns: 1fr;
   }
 
+  .footer-bottom {
+    justify-content: center;
+    text-align: center;
+  }
+
+  .footer-bottom-right {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .footer-bottom-right > span {
+    display: none;
+  }
+
   .floating-cta {
     right: 14px;
     bottom: 14px;
@@ -1395,7 +1486,6 @@ footer {
     font-size: 0.86rem;
   }
 
-  .logo-grid,
   .pillar-grid,
   .case-grid,
   .stats-grid,
@@ -1406,11 +1496,312 @@ footer {
     grid-template-columns: 1fr;
   }
 
+  .logo-grid {
+    grid-template-columns: repeat(3, minmax(90px, 1fr));
+  }
+
+  .logo-marquee {
+    padding: 6px 0 14px;
+  }
+
+  .logo-track {
+    gap: 12px;
+    animation-duration: 16s;
+  }
+
+  .logo-grid {
+    gap: 12px;
+    grid-template-columns: repeat(2, minmax(88px, 1fr));
+  }
+
+  .logo-item {
+    min-height: 40px;
+    font-size: 0.75rem;
+  }
+
+  .featured-case {
+    border-radius: 14px;
+  }
+
+  .featured-case img {
+    min-height: 150px;
+  }
+
+  .case-section {
+    display: none;
+  }
+
   .featured-kpis {
     grid-template-columns: 1fr;
   }
 
   .featured-case-body {
-    padding: 20px;
+    padding: 14px;
+    gap: 10px;
+  }
+
+  .featured-case-body h3 {
+    font-size: 1.12rem;
+  }
+
+  .featured-case-body p {
+    font-size: 0.9rem;
+    line-height: 1.45;
+  }
+
+  .featured-kpis div {
+    padding: 8px 9px;
+  }
+
+  .featured-kpis strong {
+    font-size: 1.05rem;
+  }
+
+  .featured-kpis span {
+    font-size: 0.74rem;
+  }
+
+  .pillar-card,
+  .process-step,
+  .case-card,
+  .stat,
+  .simple-card,
+  .featured-case-body,
+  .step,
+  .deliverable,
+  .effect-item {
+    padding: 13px;
+  }
+
+  .pillar-card h3,
+  .simple-card h3,
+  .case-body h3,
+  .process-step h3,
+  .step h4,
+  .deliverable h4 {
+    margin-top: 0;
+    margin-bottom: 6px;
+  }
+
+  .pillar-card p,
+  .case-body p,
+  .process-step p,
+  .step p,
+  .deliverable li,
+  .effect-item {
+    font-size: 0.92rem;
+  }
+
+  .bullet-list {
+    gap: 9px;
+    margin-top: 14px;
+  }
+
+  .bullet-list li {
+    padding: 10px 12px;
+    font-size: 0.9rem;
+  }
+
+  .process-track,
+  .steps,
+  .deliverables,
+  .effect-grid,
+  .pillar-grid,
+  .case-grid,
+  .stats-grid {
+    gap: 12px;
+  }
+
+  .case-card img {
+    aspect-ratio: 16 / 11;
+  }
+
+  .case-body {
+    padding: 14px;
+  }
+
+  .case-kpi {
+    font-size: 1.6rem;
+    margin: 8px 0 8px;
+  }
+
+  .case-metrics {
+    gap: 5px;
+    margin-top: 10px;
+  }
+
+  .case-result {
+    margin-top: 10px;
+    font-size: 0.92rem;
+  }
+
+  .stat {
+    padding: 14px;
+  }
+
+  .stat p {
+    margin: 6px 0 0;
+    font-size: 0.9rem;
+  }
+
+  .section-text {
+    font-size: 0.94rem;
+    line-height: 1.55;
+  }
+
+  .page-hero .hero-inner,
+  .hero-inner {
+    padding-bottom: 34px;
+  }
+
+  .featured-case-section,
+  .case-section,
+  .stats,
+  .cta-band {
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+
+  .case-card img {
+    aspect-ratio: 16 / 10;
+  }
+
+  .case-head {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 18px;
+  }
+
+  .section-title {
+    font-size: clamp(1.42rem, 6.6vw, 2rem);
+    margin-bottom: 10px;
+  }
+}
+
+@media (max-width: 430px) {
+  .brand-logo {
+    height: 32px;
+  }
+
+  .nav-toggle {
+    width: 40px;
+    height: 40px;
+  }
+
+  .hero-inner {
+    padding: 24px 0 28px;
+  }
+
+  .hero h1 {
+    font-size: clamp(1.48rem, 6.2vw, 1.9rem);
+    line-height: 1.02;
+  }
+
+  .hero p {
+    font-size: 0.88rem;
+    line-height: 1.45;
+  }
+
+  .hero-cta {
+    gap: 10px;
+    margin-top: 14px;
+  }
+
+  .hero-cta .btn {
+    padding: 11px 14px;
+    font-size: 0.84rem;
+  }
+
+  .hero-cta .btn-secondary {
+    display: none;
+  }
+
+  .hero-proof {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 8px;
+    margin-top: 12px;
+  }
+
+  .proof-item {
+    padding: 8px 9px;
+  }
+
+  .proof-item strong {
+    font-size: 0.98rem;
+  }
+
+  .proof-item span {
+    margin-top: 4px;
+    font-size: 0.68rem;
+    line-height: 1.18;
+  }
+
+  .logo-title {
+    padding-top: 14px;
+    font-size: 0.72rem;
+  }
+
+  .logo-grid {
+    grid-template-columns: repeat(3, minmax(78px, 1fr));
+    gap: 10px;
+  }
+
+  .logo-item {
+    min-height: 38px;
+    font-size: 0.68rem;
+  }
+
+  .featured-case img {
+    min-height: 138px;
+  }
+
+  .featured-case-body {
+    padding: 12px;
+    gap: 8px;
+  }
+
+  .featured-case-body h3 {
+    font-size: 1.05rem;
+  }
+
+  .featured-case-body p,
+  .section-text {
+    font-size: 0.88rem;
+  }
+
+  .featured-kpis {
+    gap: 8px;
+  }
+
+  .featured-kpis div {
+    padding: 7px 8px;
+  }
+
+  .featured-kpis strong {
+    font-size: 0.98rem;
+  }
+
+  .featured-kpis span {
+    font-size: 0.7rem;
+  }
+
+  .section {
+    padding: 32px 0;
+  }
+
+  .section-title {
+    font-size: clamp(1.36rem, 6vw, 1.8rem);
+  }
+
+  .pillar-card,
+  .process-step,
+  .case-card,
+  .stat,
+  .simple-card,
+  .featured-case-body,
+  .step,
+  .deliverable,
+  .effect-item {
+    padding: 12px;
   }
 }
