@@ -23,6 +23,28 @@ if (rotatingHero && heroSection && heroLayerA && heroLayerB) {
     "Budujemy zespoły,<br>które dowożą cele i rosną szybciej niż rynek."
   ];
 
+  const updateHeroTitleMinHeight = () => {
+    const probe = rotatingHero.cloneNode(false);
+    probe.classList.remove("is-fading");
+    probe.style.position = "absolute";
+    probe.style.visibility = "hidden";
+    probe.style.pointerEvents = "none";
+    probe.style.height = "auto";
+    probe.style.minHeight = "0";
+    probe.style.width = `${rotatingHero.clientWidth}px`;
+
+    heroSection.appendChild(probe);
+
+    let maxHeight = 0;
+    heroTexts.forEach((text) => {
+      probe.innerHTML = text;
+      maxHeight = Math.max(maxHeight, probe.offsetHeight);
+    });
+
+    probe.remove();
+    rotatingHero.style.minHeight = `${Math.ceil(maxHeight)}px`;
+  };
+
   const heroImages = [
     "https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1800&h=1100&q=80",
     "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1800&h=1100&q=80",
@@ -30,6 +52,18 @@ if (rotatingHero && heroSection && heroLayerA && heroLayerB) {
   ];
 
   rotatingHero.innerHTML = heroTexts[0];
+  updateHeroTitleMinHeight();
+
+  let heroResizeRaf = 0;
+  window.addEventListener("resize", () => {
+    if (heroResizeRaf) {
+      cancelAnimationFrame(heroResizeRaf);
+    }
+
+    heroResizeRaf = requestAnimationFrame(() => {
+      updateHeroTitleMinHeight();
+    });
+  });
 
   heroLayerA.src = heroImages[0];
   heroLayerB.src = heroImages[1];
