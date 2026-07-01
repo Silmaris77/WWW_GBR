@@ -375,6 +375,7 @@ img {
 
 .hero-line {
   display: block;
+  white-space: nowrap;
 }
 
 .hero h1.is-fading {

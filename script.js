@@ -24,9 +24,9 @@ if (rotatingHero && heroSection && heroLayerA && heroLayerB) {
   ];
 
   const heroTextsMobile = [
-    '<span class="hero-line">Podnosimy skuteczność</span><span class="hero-line">sprzedaży i rozwój</span><span class="hero-line">liderów zespołów.</span>',
-    '<span class="hero-line">Przekładamy strategię</span><span class="hero-line">na mierzalne wyniki</span><span class="hero-line">sprzedaży i firmy.</span>',
-    '<span class="hero-line">Budujemy zespoły,</span><span class="hero-line">które realizują cele</span><span class="hero-line">i rosną szybciej.</span>'
+    '<span class="hero-line">Wzmacniamy sprzedaż</span><span class="hero-line">i rozwijamy liderów</span><span class="hero-line">Twoich zespołów.</span>',
+    '<span class="hero-line">Przekładamy strategię</span><span class="hero-line">na konkretne wyniki</span><span class="hero-line">sprzedaży i firmy.</span>',
+    '<span class="hero-line">Budujemy zespoły,</span><span class="hero-line">które dowożą cele</span><span class="hero-line">i rosną szybciej.</span>'
   ];
 
   const getActiveHeroTexts = () => {
